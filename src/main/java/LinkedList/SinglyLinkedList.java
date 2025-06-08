@@ -51,6 +51,8 @@ public class SinglyLinkedList {
 
     }
 
+    public void reverse(){}
+
     public void print(){
         Node current = head;
 
