@@ -51,7 +51,19 @@ public class SinglyLinkedList {
 
     }
 
-    public void reverse(){}
+    public void reverse(){
+        Node prev = null, next = null;
+
+        while (head != null){
+            next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
+        }
+        head = prev;
+        System.out.println("Revered list ");
+        print();
+    }
 
     public void print(){
         Node current = head;
@@ -60,5 +72,17 @@ public class SinglyLinkedList {
             System.out.println(current.data + " -> ");
             current = current.next;
         }
+    }
+
+    public static void main(String[] args) {
+        SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
+        singlyLinkedList.insertAtTail(1);
+        singlyLinkedList.insertAtTail(2);
+        singlyLinkedList.insertAtTail(3);
+        singlyLinkedList.insertAtTail(4);
+
+        singlyLinkedList.print();
+        singlyLinkedList.reverse();
+
     }
 }
